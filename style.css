@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.header {
+    background-color: #161b22;
+    padding: 5px;
+    text-align: center;
+}
+
+.header h1 {
+    color: #5394df;
+    font-size: 25px;
+}
+
+.container-titulo {
+    font-size: medium;
+
+}
+
+.container-titulo a {
+    text-decoration: none;
+    color: #5394df;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+
+}
+
+.stock-card {
+    background-color: #161b22;
+    padding: 50px;
+    border-radius: 12px;
+    width: 50%;
+    margin-top: 80px;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.397);
+}
+
+.stock-info {
+    margin-bottom: 20px;
+}
+
+.stock-info h2 {
+    font-size: 22px;
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.change {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.change.positive {
+    color: #00c853;
+}
+
+.change.negative {
+    color: #ff1744;
+}
+
+.prev-price {
+    font-size: 14px;
+    color: #8b949e;
+}
+
+canvas {
+    width: 100% !important;
+    height: 150px !important;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #161b22;
+    font-size: 14px;
+    margin-top: 110px;
+}
+
