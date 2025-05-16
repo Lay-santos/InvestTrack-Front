@@ -112,7 +112,7 @@ header input {
     color: #ffffff;
   }
  
-  .input-wrapper {
+ .input-wrapper {
     display: flex;
     align-items: center;
     gap: 8px;

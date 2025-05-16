@@ -172,6 +172,7 @@ header input {
     padding: 20px;
     background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
+    text-align: center;
   }
 
 .container-titulo{
