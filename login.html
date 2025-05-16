@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body id="your-element-selector">
+
+    <div class="login-container">
+        <div class="login-background"></div>
+        <div class="login-box">
+            <div class="titulo">
+                <h2>InvestTrack</h2>
+            </div>
+            <form class="form1">
+                <div class="input-group">
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    
+                    <input type="password" placeholder="Senha">
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Lembre-me</label>
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit">LOGIN</button>
+
+                <h1 class="cadastrar">Não tem uma conta?<a href="cadastro.html">Cadastra-se</a></h1>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/three.r134.min.js"></script>
+    <script src="./js/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#your-element-selector",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: "#58a6ff",
+            backgroundColor: "black",
+            points: 11.00,
+            maxDistance: 23.00
+        })
+    </script>
+</body>
+</html>

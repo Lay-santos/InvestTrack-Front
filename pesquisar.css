@@ -1,29 +1,30 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d1117;
+    background-color: rgba(0, 0, 0, 0.932);
     color: #c9d1d9;
 }
 
-.header {
-    background-color: #161b22;
-    padding: 5px;
-    text-align: center;
+header {
+    background: linear-gradient(to right, #01152c9d, #00193062);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header h1 {
-    color: #5394df;
+    color: #ffffff;
     font-size: 25px;
 }
 
 .container-titulo {
-    font-size: medium;
-
+    font-size:xx-small;
 }
 
 .container-titulo a {
     text-decoration: none;
-    color: #5394df;
+    color: #ffffff;
 }
 
 .main {
@@ -39,7 +40,7 @@ body {
     border-radius: 12px;
     width: 50%;
     margin-top: 80px;
-    box-shadow: 0 0 15px rgba(88, 166, 255, 0.397);
+    box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
 }
 
 .stock-info {
@@ -48,7 +49,7 @@ body {
 
 .stock-info h2 {
     font-size: 22px;
-    color: #58a6ff;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -81,11 +82,11 @@ canvas {
     height: 150px !important;
 }
 
+
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #161b22;
+    background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
-    margin-top: 110px;
+    margin-top: 105px;
 }
-
