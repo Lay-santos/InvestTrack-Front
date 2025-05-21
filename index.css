@@ -199,3 +199,7 @@ transform: scale(1);
 .animated-icon:hover {
 transform: rotate(10deg) scale(1.2);
 }
+
+.contentAltas{
+  color: white;
+}
