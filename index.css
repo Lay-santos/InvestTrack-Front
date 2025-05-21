@@ -145,7 +145,28 @@ footer {
   margin-top: 564px;
 }
 
-.flip-card {
+.cardPopulares {
+  width: 480px;
+  height: 50px;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+  border-radius: 10px;
+  background: linear-gradient(to right, #042b50, #212260);
+  margin-left: 45px;
+  color: black;
+}
+
+.cardAltas {
+  width: 480px;
+  height: 50px;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+  border-radius: 10px;
+  background: linear-gradient(to right, #042b50, #212260);
+  margin-left: 45px;
+  color: black;
+}
+.CardBaixas {
   width: 480px;
   height: 50px;
   perspective: 1000px;

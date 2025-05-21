@@ -1,15 +1,27 @@
-const ApiAlta = "https://investtrack-j5re.onrender.com/acoes/altas"
-const ApiBaixa = "https://investtrack-j5re.onrender.com/acoes/baixas"
-const ApiPopular = "https://investtrack-j5re.onrender.com/acoes/populares"
+let cardPopulares = document.querySelector(".cardPopulares")
+let cardAltas = document.querySelector(".cardAltas")
+let CardBaixas = document.querySelector(".CardBaixas")
+
+let contentPopulares = document.querySelector(".contentPopulares")
+let contentAltas = document.querySelector(".contentAltas")
+let contentBaixas = document.querySelector(".contentBaixas")
+
 
 // chrome.exe --disable-web-security --user-data-dir="C:/temp-chrome"
 
 document.addEventListener("DOMContentLoaded", () => {
+const ApiAlta = "https://investtrack-j5re.onrender.com/acoes/altas"
+const ApiBaixa = "https://investtrack-j5re.onrender.com/acoes/baixas"
+const ApiPopular = "https://investtrack-j5re.onrender.com/acoes/populares"
 
     function Alta() {
         fetch(ApiAlta)
             .then((res) => res.json())
-            .then(data => console.log("Alta",data));
+            .then(data => {
+                data.array.forEach(element => {
+                    
+                });
+            });
 
     }
     Alta()
