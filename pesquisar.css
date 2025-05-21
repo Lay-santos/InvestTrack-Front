@@ -31,15 +31,16 @@ header {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-
+    
+    
 }
 
 .stock-card {
     background-color: #161b22;
-    padding: 50px;
+    padding: 15px;
     border-radius: 12px;
-    width: 50%;
-    margin-top: 80px;
+    width: 550px;
+    margin-top: 30px;
     box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
 }
 
@@ -79,7 +80,7 @@ header {
 
 canvas {
     width: 100% !important;
-    height: 150px !important;
+    height: 200px !important;
 }
 
 
@@ -88,5 +89,5 @@ canvas {
     padding: 20px;
     background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
-    margin-top: 105px;
+    margin-top: 205px;
 }
