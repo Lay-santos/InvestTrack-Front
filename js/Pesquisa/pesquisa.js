@@ -7,7 +7,11 @@ searchInput.addEventListener("keydown", () => {
     setTimeout(function () {
         const ddlContainer = document.querySelector("#ddlContainer");
         ddlContainer.innerHTML = "";
-         let valorPesquisa = searchInput.value;
+        let valorPesquisa = searchInput.value;
+
+        if(valorPesquisa.length < 3){
+            return;
+        }
         fetch(API_URL + valorPesquisa, {
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +34,11 @@ searchInput.addEventListener("keydown", () => {
                 listaResultados.forEach(item => {
                     let divItem = document.createElement("div");
                     divItem.className = "ddlItem";
-                    divItem.addEventListener("click", console.log("Foi"));
+                    divItem.addEventListener("click", () => {
+                        var urlAtual = window.location.origin;
+                        window.location.href = `${urlAtual}/pesquisar.html?${item}`
+
+                    });
                     divItem.innerText = item;
                     ddlContainer.appendChild(divItem);
                 });
