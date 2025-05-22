@@ -146,7 +146,7 @@ footer {
   padding: 20px;
   background: linear-gradient(to right, #01152c9d, #00193062);
   font-size: 14px;
-  margin-top: 64px;
+  margin-top: 515px;
 }
 
 .cardPopulares {
@@ -155,9 +155,13 @@ footer {
   perspective: 1000px;
   /* Remove this if you don't want the 3D effect */
   border-radius: 10px;
-  background: linear-gradient(to right, #042b50, #212260);
+  background: rgba(211, 139, 139, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: rgba(65, 64, 64, 0.19) 0px 10px 20px, rgba(53, 52, 52, 0.13) 0px 6px 6px;
   margin-left: 45px;
-  color: black;
+  color: rgb(24, 24, 24);
 }
 
 .cardAltas {
@@ -166,9 +170,13 @@ footer {
   perspective: 1000px;
   /* Remove this if you don't want the 3D effect */
   border-radius: 10px;
-  background: linear-gradient(to right, #042b50, #212260);
+  background: rgba(211, 139, 139, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: rgba(65, 64, 64, 0.19) 0px 10px 20px, rgba(53, 52, 52, 0.13) 0px 6px 6px;
   margin-left: 45px;
-  color: black;
+  color: rgb(24, 24, 24);
 }
 
 .cardBaixas {
@@ -177,9 +185,13 @@ footer {
   perspective: 1000px;
   /* Remove this if you don't want the 3D effect */
   border-radius: 10px;
-  background: linear-gradient(to right, #042b50, #212260);
+  background: rgba(211, 139, 139, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: rgba(65, 64, 64, 0.19) 0px 10px 20px, rgba(53, 52, 52, 0.13) 0px 6px 6px;
   margin-left: 45px;
-  color: black;
+  color: rgb(24, 24, 24);
 }
 
 .animated-icon {
@@ -209,13 +221,37 @@ footer {
 
 .contentAltas {
   color: white;
+  display: flex;
+  justify-content: space-between;
 
 }
+
 .contentBaixas {
   color: white;
+  display: flex;
+  justify-content: space-between;
 
 }
+
 .contentPopulares {
   color: white;
+  display: flex;
+  justify-content: space-between;
 
+}
+
+.close {
+  position: relative;
+  top: 30px;
+  right: 230px;
+}
+
+.imagem {
+  background-color: #c9d1d9;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  border-radius: 5px;
 }

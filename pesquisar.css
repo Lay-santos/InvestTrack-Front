@@ -31,8 +31,6 @@ header {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-    
-    
 }
 
 .stock-card {
@@ -42,10 +40,7 @@ header {
     width: 550px;
     margin-top: 30px;
     box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
-}
-
-.stock-info {
-    margin-bottom: 20px;
+     margin-bottom: 20px;
 }
 
 .stock-info h2 {
@@ -65,12 +60,8 @@ header {
     margin: 5px 0;
 }
 
-.change.positive {
+.change {
     color: #00c853;
-}
-
-.change.negative {
-    color: #ff1744;
 }
 
 .prev-price {
@@ -83,11 +74,10 @@ canvas {
     height: 200px !important;
 }
 
-
 .footer {
     text-align: center;
     padding: 20px;
     background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
-    margin-top: 205px;
+    margin-top: 190px;
 }
