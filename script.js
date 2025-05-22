@@ -1,5 +1,18 @@
+const API_URL = "http://localhost:8080/acoes/";
 const ctx = document.getElementById('stockChart').getContext('2d');
- 
+
+const ticker = window.location.search.replace("?", "");
+
+selecionaAcao();
+
+function selecionaAcao (){
+   fetch(`${API_URL}${ticker}`)
+   .then(res => res.json())
+   .then((objAcao) => {
+      document.querySelector("#tickerName").innerText = objAcao.symbol;
+      document.querySelector("#tickerLogo").src = objAcao.logourl;
+   });
+}
 const stockChart = new Chart(ctx, {
   type: 'line',
   data: {
