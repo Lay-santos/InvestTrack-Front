@@ -30,22 +30,29 @@ header {
 .main {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
-    
-    
+    align-items: center;
+    padding: 20px 20px;
+    flex-direction: column;
 }
 
 .stock-card {
+    display: flex;
+    flex-direction: column;
     background-color: #161b22;
     padding: 15px;
     border-radius: 12px;
-    width: 550px;
-    margin-top: 30px;
+    width: 70%;
+    margin-top: 50px;
     box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
 }
 
 .stock-info {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
+    justify-content: center;
+    align-items: end;
+
 }
 
 .stock-info h2 {
@@ -65,12 +72,15 @@ header {
     margin: 5px 0;
 }
 
-.change.positive {
+.change.positive, .positive {
     color: #00c853;
 }
 
-.change.negative {
+.change.negative, .negative {
     color: #ff1744;
+}
+.attention{
+    color: rgb(240, 240, 78);
 }
 
 .prev-price {
@@ -80,7 +90,7 @@ header {
 
 canvas {
     width: 100% !important;
-    height: 200px !important;
+    height: 250px !important;
 }
 
 
@@ -89,5 +99,40 @@ canvas {
     padding: 20px;
     background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
-    margin-top: 205px;
+    margin-top: 105px;
+}
+
+#tickerLogo{
+    width: 50px;
+    height: 50px;
+}
+#presentationContainer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.aboutTicker{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+#longNameTicker{
+    font-size: 20pt;
+}
+.containerDiv{
+    display: inline-flex;
+    justify-content: space-between;
+}
+#returnBtn{
+    margin-left: 5%;
+}
+#favHeart{
+    cursor: pointer;
+    transition: fill 0.25s ease;
+}
+#favHeart:hover{
+        fill: #ffffff;
 }
