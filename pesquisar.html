@@ -18,15 +18,22 @@
     </div>
 
     <main class="main">
-        <img src="" alt="Imagem da logo da ação" id="tickerLogo">
-        <h1 id="tickerName"></h1>
-
         <section class="stock-card">
+            <div id="presentationContainer">
+                <img src="" alt="Imagem da logo da ação" id="tickerLogo">
+                <h1 id="tickerName"></h1>
+            </div>
+
+            <div class="aboutTicker">
+                <span id="longNameTicker"></span>
+                <span id="marketCapTicker"></span>
+                <span id="marketVolumeTicker"></span>
+            </div>
             <div class="stock-info">
-                <h2>USDBRL - Junho 2024</h2>
-                <p class="price"> 5,1083</p>
-                <p class="change positive">+0,0016 (+0,03%)</p>
-                <p class="prev-price">Anterior: 5,1067</p>
+                <h2 id="infoMoney"> </h2>
+                <p class="price"></p>
+                <p class="change positive" id="change"></p>
+                <p class="prev-price"></p>
             </div>
             <canvas id="stockChart" width="600" height="300"></canvas>
         </section>

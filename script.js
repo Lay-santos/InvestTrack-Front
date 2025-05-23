@@ -2,6 +2,8 @@ const API_URL = "http://localhost:8080/acoes/";
 const ctx = document.getElementById('stockChart').getContext('2d');
 
 const ticker = window.location.search.replace("?", "");
+let arrayPrices = [];
+let arrayDates = [];
 
 selecionaAcao();
 
@@ -9,17 +11,45 @@ function selecionaAcao (){
    fetch(`${API_URL}${ticker}`)
    .then(res => res.json())
    .then((objAcao) => {
+    console.log(objAcao.regularMarketPrice);
       document.querySelector("#tickerName").innerText = objAcao.symbol;
       document.querySelector("#tickerLogo").src = objAcao.logourl;
+      document.querySelector("#infoMoney").innerText = `${objAcao.currency}`
+      console.log(objAcao.regularMarketPrice)
+      document.querySelector(".price").innerText = `${objAcao.regularMarketPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+      if(objAcao.regularMarketChangePercent < 0){
+        document.querySelector("#change").classList.remove("positive");
+        document.querySelector("#change").classList.add("negative");
+      }
+      document.querySelector("#change").innerHTML = `${objAcao.regularMarketChangePercent > 0 ? "+" : ""}${objAcao.regularMarketChangePercent}%`;
+      document.querySelector("#longNameTicker").innerHTML = `${objAcao.longName}`;
+      document.querySelector("#marketCapTicker").innerHTML = `<strong>Capitalização de mercado:</strong> ${objAcao.marketCap.toLocaleString()}`;
+      document.querySelector("#marketVolumeTicker").innerHTML = `<strong>Volume de mercado:</strong> ${objAcao.regularMarketVolume.toLocaleString()}`;
+      
+      document.querySelector(".prev-price").innerHTML = `${(objAcao.regularMarketPrice - objAcao.regularMarketChange).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+
+      const arrayDataPrices = objAcao.historicalDataPrice;
+
+      arrayDataPrices.forEach(obj => {
+        arrayPrices.push(obj.open);
+        arrayPrices.push(obj.high);
+        arrayPrices.push(obj.low);
+        arrayPrices.push(obj.close);
+
+        let datePrice = new Date(obj.date * 1000);
+
+        arrayDates.push(`${datePrice.getDate()}/${datePrice.getMonth()}/${datePrice.getFullYear()}`);
+      });
+
    });
 }
 const stockChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+    labels: arrayDates,
     datasets: [{
       label: 'Preço',
-      data: [5.1050, 5.1070, 5.1100, 5.1080, 5.1090, 5.1065, 5.1083],
+      data: arrayPrices,
       borderColor: '#58a6ff',
       backgroundColor: 'rgba(255, 255, 255, 0.1)',
       fill: true,

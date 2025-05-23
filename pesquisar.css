@@ -30,21 +30,30 @@ header {
 .main {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: center;
+    padding: 20px 20px;
+    flex-direction: column;
 
 }
 
 .stock-card {
+    display: flex;
+    flex-direction: column;
     background-color: #161b22;
     padding: 50px;
     border-radius: 12px;
-    width: 50%;
-    margin-top: 80px;
+    width: 70%;
+    margin-top: 50px;
     box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
 }
 
 .stock-info {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
+    justify-content: center;
+    align-items: end;
+
 }
 
 .stock-info h2 {
@@ -94,4 +103,20 @@ canvas {
 #tickerLogo{
     width: 50px;
     height: 50px;
+}
+#presentationContainer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.aboutTicker{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+#longNameTicker{
+    font-size: 20pt;
 }
