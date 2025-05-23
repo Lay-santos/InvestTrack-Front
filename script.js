@@ -63,10 +63,12 @@ const stockChart = new Chart(ctx, {
       label: 'Preço',
       data: arrayPrices,
       borderColor: '#58a6ff',
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      backgroundColor: 'rgba(255, 255, 255, 0)',
       fill: true,
       tension: 0.3,
-      pointRadius: 0,
+      pointRadius: 3,
+      pointHoverRadius: 5
+      
     }]
   },
   options: {
@@ -74,11 +76,18 @@ const stockChart = new Chart(ctx, {
     plugins: {
       legend: {
         display: false
-      },
+      }
+    },
+    hover: {
+      intersect: false
+    },
+    interaction: {
+      mode: 'index', 
+      intersect: false
     },
     scales: {
       x: {
-        display: false
+        display: true
       },
       y: {
         display: false
