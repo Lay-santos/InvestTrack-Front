@@ -146,7 +146,6 @@ footer {
   padding: 20px;
   background: linear-gradient(to right, #01152c9d, #00193062);
   font-size: 14px;
-  margin-top: 515px;
 }
 
 .cardPopulares {
@@ -244,6 +243,7 @@ footer {
   position: relative;
   top: 30px;
   right: 230px;
+  color: white;
 }
 
 .imagem {
@@ -252,6 +252,5 @@ footer {
   width: 50px;
   position: relative;
   top: 20px;
-  margin: 0 auto;
-  border-radius: 5px;
+    border-radius: 5px;
 }

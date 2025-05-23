@@ -30,9 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     divAlta.innerHTML =
                         `
                     <div class="contentAltas">
+                            <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
                             <p>${element.close}</p>
+                            <p class="close">${element.change}</p>
+
                     </div>
                     
 
@@ -55,9 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     divBaixa.innerHTML =
                     `
                     <div class="contentBaixas">
+                            <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
                             <p>${element.close}</p>
+                            <p class="close">${element.change}</p>
                     </div>
                 `
                     boardBaixas.append(divBaixa)
@@ -78,9 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     divPopulares.innerHTML =
                     `
                     <div class="contentBaixas">
+                            <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
                             <p>${element.close}</p>
+                            <p class="close">${element.change}</p>
                     </div>
                 `
                     boardPopulares.append(divPopulares)
