@@ -120,3 +120,7 @@ canvas {
 #longNameTicker{
     font-size: 20pt;
 }
+.containerDiv{
+    display: inline-flex;
+    justify-content: space-between;
+}
