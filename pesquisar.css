@@ -130,3 +130,10 @@ canvas {
 #returnBtn{
     margin-left: 5%;
 }
+#favHeart{
+    cursor: pointer;
+    transition: fill 0.25s ease;
+}
+#favHeart:hover{
+        fill: #ffffff;
+}
