@@ -73,12 +73,15 @@ header {
     margin: 5px 0;
 }
 
-.change.positive {
+.change.positive, .positive {
     color: #00c853;
 }
 
-.change.negative {
+.change.negative, .negative {
     color: #ff1744;
+}
+.attention{
+    color: rgb(240, 240, 78);
 }
 
 .prev-price {
@@ -88,7 +91,7 @@ header {
 
 canvas {
     width: 100% !important;
-    height: 150px !important;
+    height: 250px !important;
 }
 
 
@@ -123,4 +126,7 @@ canvas {
 .containerDiv{
     display: inline-flex;
     justify-content: space-between;
+}
+#returnBtn{
+    margin-left: 5%;
 }
