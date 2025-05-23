@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p>${element.close}</p>
-                            <p class="close">${element.change}</p>
+                            <p>${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
+                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
 
                     </div>
                     
@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p>${element.close}</p>
-                            <p class="close">${element.change}</p>
+                            <p>${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
+                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
                     </div>
                 `
                     boardBaixas.append(divBaixa)
@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     divPopulares.classList.add("cardBaixas")
                     divPopulares.innerHTML =
                     `
-                    <div class="contentBaixas">
+                    <div class="contentPopulares">
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p>${element.close}</p>
-                            <p class="close">${element.change}</p>
+                            <p class="close">${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
+                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
                     </div>
                 `
                     boardPopulares.append(divPopulares)

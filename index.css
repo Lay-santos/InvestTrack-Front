@@ -239,10 +239,10 @@ footer {
 
 }
 
-.close {
+.change {
   position: relative;
   top: 30px;
-  right: 230px;
+  right: 330px;
   color: white;
 }
 
@@ -252,5 +252,5 @@ footer {
   width: 50px;
   position: relative;
   top: 20px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
