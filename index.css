@@ -254,3 +254,17 @@ footer {
   top: 20px;
   border-radius: 5px;
 }
+
+.abaixoDeZero {
+  color: red;
+  position: relative;
+  top: 30px;
+  right: 330px;
+}
+
+.acimaDeZero {
+  color: lawngreen;
+  position: relative;
+  top: 30px;
+  right: 330px;
+}

@@ -27,19 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
                     const divAlta = document.createElement("div")
 
                     divAlta.classList.add("cardAltas")
-                    divAlta.innerHTML =
-                        `
+
+                    if (element.change < 0) {
+                        divAlta.innerHTML =
+                            `
                     <div class="contentAltas">
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p>${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
-                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
+                            <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="abaixoDeZero">${element.change.toLocaleString('pt-BR')}</p>
+
+                    </div>
+                    `
+                    } else {
+                        divAlta.innerHTML =
+                            `
+                    <div class="contentAltas">
+                            <img class ="imagem"  src="${element.logo}" alt="">
+                            <p>${element.name}</p>
+                            <p>${element.stock}</p>
+                            <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="acimaDeZero">${element.change.toLocaleString('pt-BR')}</p>
 
                     </div>
                     
 
                     `
+                    }
+
                     boardAltas.append(divAlta)
                 });
             });
@@ -48,23 +64,50 @@ document.addEventListener("DOMContentLoaded", () => {
     Alta()
 
     function Baixa() {
+
         fetch(ApiBaixa)
             .then((res) => res.json())
             .then(data1 => {
                 data1.stocks.forEach(element => {
                     const divBaixa = document.createElement("div")
-
                     divBaixa.classList.add("cardBaixas")
-                    divBaixa.innerHTML =
-                    `
+
+                    // não mexer nessa porra, irei deixar comentado caso eu tenho que refazer ou algo do tipo
+                    //     divBaixa.innerHTML =
+                    //         `
+                    //     <div class="contentBaixas">
+                    //             <img class ="imagem"  src="${element.logo}" alt="">
+                    //             <p>${element.name}</p>
+                    //             <p>${element.stock}</p>
+                    //             <p class = "close">${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                    //             <p class="change">${element.change.toLocaleString('pt-BR')}</p>
+                    //     </div>
+                    // `
+
+                    if (element.change < 0) {
+                        divBaixa.innerHTML =
+                            `
                     <div class="contentBaixas">
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p>${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
-                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
+                            <p class = "close">${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="abaixoDeZero">${element.change.toLocaleString('pt-BR')}</p>
                     </div>
                 `
+                    } else {
+                        divBaixa.innerHTML =
+                            `
+                    <div class="contentBaixas">
+                            <img class ="imagem"  src="${element.logo}" alt="">
+                            <p>${element.name}</p>
+                            <p>${element.stock}</p>
+                            <p class = "close">${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="acimaDeZero">${element.change.toLocaleString('pt-BR')}</p>
+                    </div>
+                `
+                    }
+
                     boardBaixas.append(divBaixa)
 
                 })
@@ -79,17 +122,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 data2.stocks.forEach(element => {
                     const divPopulares = document.createElement("div")
 
-                    divPopulares.classList.add("cardBaixas")
-                    divPopulares.innerHTML =
-                    `
+                    divPopulares.classList.add("cardPopulares")
+
+                    if (element.change < 0) {
+                        divPopulares.innerHTML =
+                            `
                     <div class="contentPopulares">
                             <img class ="imagem"  src="${element.logo}" alt="">
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p class="close">${element.close.toLocaleString('pt-BR', {style:'currency',currency: 'BRL'})}</p>
-                            <p class="change">${element.change.toLocaleString('pt-BR')}</p>
+                            <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="abaixoDeZero">${element.change.toLocaleString('pt-BR')}</p>
+
                     </div>
-                `
+                    `
+                    } else {
+                        divPopulares.innerHTML =
+                            `
+                    <div class="contentPopulares">
+                            <img class ="imagem"  src="${element.logo}" alt="">
+                            <p>${element.name}</p>
+                            <p>${element.stock}</p>
+                            <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p class="acimaDeZero">${element.change.toLocaleString('pt-BR')}</p>
+
+                    </div>
+                    
+
+                    `
+                    }
                     boardPopulares.append(divPopulares)
 
                 })
