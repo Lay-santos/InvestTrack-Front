@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
@@ -15,10 +14,12 @@
     <header>
         <div class="container">
             <h1>InvestTrack</h1>
+            <div class="searchContainer">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Pesquise a ação desejada.." id="searchInput" />
 
-            <div class="input-wrapper">
-                <input type="text" placeholder="Pesquise a ação desejada.." />
-                <span class="material-icons">search</span>
+                </div>
+                <div id="ddlContainer"></div>
             </div>
 
             <div class="icons"> <a href="favoritos.html">
@@ -62,6 +63,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="InvestTrack.js"></script>
+    <script src="js/Pesquisa/pesquisaAcao.js"></script>
 </body>
 
 </html>
