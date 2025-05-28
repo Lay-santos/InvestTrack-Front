@@ -29,7 +29,6 @@ header {
 
 .main {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 20px 20px;
     flex-direction: column;
@@ -44,6 +43,7 @@ header {
     width: 70%;
     margin-top: 50px;
     box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
+    margin-bottom: 20px;
 }
 
 .stock-info {
@@ -52,7 +52,6 @@ header {
     margin-bottom: 20px;
     justify-content: center;
     align-items: end;
-
 }
 
 .stock-info h2 {
@@ -92,7 +91,6 @@ canvas {
     width: 100% !important;
     height: 250px !important;
 }
-
 
 .footer {
     text-align: center;
