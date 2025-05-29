@@ -216,3 +216,11 @@ header input {
 #returnBtn{
     margin-left: 5%;
 }
+@media (max-width:600px){
+  .logoHeader{
+    display: none;
+  }
+  .searchContainer{
+    width: 80%;
+  }
+}

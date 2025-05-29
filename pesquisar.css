@@ -134,3 +134,20 @@ canvas {
 #favHeart:hover{
         fill: #ffffff;
 }
+@media (max-width: 600px){
+    .stock-card{
+        width: 90%;
+    }
+    .aboutTicker{
+        font-size: 10px;
+    }
+    #longNameTicker{
+        font-size: 20px;
+    }
+    .infoMoney, .price, .change, .prev-price{
+        font-size: 20px;
+    }
+    #stockChart{
+        width: 100%;
+    }
+}
