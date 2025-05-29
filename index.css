@@ -143,7 +143,6 @@ footer {
 
 .stocks {
   width: 100%;
-    /* Remove this if you don't want the 3D effect */
   border-radius: 10px;
   background: rgba(211, 139, 139, 0.03);
   border-radius: 16px;
@@ -180,6 +179,7 @@ footer {
 }
 
 .contentStocks {
+  width: 100%;
   color: white;
   display: flex;
   justify-content: space-evenly;
@@ -211,11 +211,12 @@ footer {
   top: 30px;
   right: 330px;
 }
+
 .animated-icon:hover {
-transform: rotate(10deg) scale(1.2);
+  transform: rotate(10deg) scale(1.2);
 }
 
-#ddlContainer{
+#ddlContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -223,43 +224,87 @@ transform: rotate(10deg) scale(1.2);
   position: absolute;
   width: 100%;
 }
-#searchInput{
+
+#searchInput {
   width: 100%;
 }
-.ddlItem{
+
+.ddlItem {
   width: 100%;
   height: 30px;
   color: black;
   text-align: center;
   background-color: #ffffff;
   cursor: pointer;
-  
-  &:hover{
+
+  &:hover {
     background-color: #f3f3f8;
 
   }
 }
-.searchContainer{
-    width: 60%;
-    position: relative;
+
+.searchContainer {
+  width: 60%;
+  position: relative;
 }
-.topStockCard{
+
+.topStockCard {
   display: flex;
   justify-content: space-evenly;
   gap: 10%;
 }
-.imageContent{
+
+.imageContent {
   display: flex;
-  width: 30%;
+  width: 20%;
   justify-content: center;
   align-items: center;
 }
-.textContent{
-  width: 60%;
+
+.textContent {
+  width: 70%;
 }
-.textContent p{
+
+.textContent p {
   text-align: center;
 }
-.boardStocks{
+
+.boardStocks {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  section{
+    width: 80%;
+  }
+  .topStockCard{
+    gap: 5%
+  }
+}
+
+@media (max-width: 600px){
+  .searchContainer{
+    width: 80%;
+  }
+  .logoHeader{
+    display: none;
+  }
+    section{
+    width: 90%;
+  }
+  .contentStocks{
+    display: flex;
+    gap: 0;
+  }
+  .textContent{
+    width: 50%;
+  }
+  .imagem{
+    width: 60px;
+    height: 60px;
+  }
+  .topStockCard{
+    display: flex;
+    flex-direction: column;
+  }
 }

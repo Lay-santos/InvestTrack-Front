@@ -64,7 +64,6 @@ const stockChart = new Chart(ctx, {
       data: arrayPrices,
       borderColor: '#58a6ff',
       backgroundColor: 'rgba(255, 255, 255, 0)',
-      fill: true,
       tension: 0.3,
       pointRadius: 3,
       pointHoverRadius: 5
@@ -81,13 +80,9 @@ const stockChart = new Chart(ctx, {
     hover: {
       intersect: false
     },
-    interaction: {
-      mode: 'index', 
-      intersect: false
-    },
     scales: {
       x: {
-        display: true
+        display: false
       },
       y: {
         display: false
