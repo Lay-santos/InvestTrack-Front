@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    }
+
+    .titulo{
+        display: flex;
+        color: white;
+        border-radius: 5px;
+        font-family: "Delius", cursive; 
+        align-items: center;
+        justify-content: center;
+        font-size: xx-large;
+        font-family: "Roboto", sans-serif;
+    }
+     
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+    }
+     
+    .login-background {
+        position: absolute;
+        width: 385px;
+        height: 500px;
+        background: rgba(184, 184, 184, 0.158);
+        box-shadow: rgba(0, 0, 0, 0.678) 0px 5px 15px;
+        border-radius: 8px;
+    }
+     
+    .login-box {
+        position: absolute;
+        width: 320px;
+        height: 420px;
+        background-color: #06010a71;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 1;
+    }
+     
+    .user-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #e3e0e6;
+        margin: -70px auto 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 5px;
+        margin: 10px 0;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+     
+    .input-group .icon {
+        padding: 5px;
+        font-size: 18px;
+    }
+     
+    .input-group input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        width: 100%;
+    }
+     
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: white;
+        margin-top: 25px;
+    }
+     
+    .remember-forgot a {
+        color: white;
+        text-decoration: none;
+        margin-top: 2px;
+    }
+     
+    button {
+        width: 100%;
+        background: linear-gradient(to right, #042b50, #212260);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 19px;
+    }
+
+    form{
+        margin-top: 65px;
+    }
+     
+    button:hover {
+        background: linear-gradient(to right, #212260, #042b50);
+    }
+
+    .cadastrar{
+        display: flex;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.802);
+        margin-top: 10px;
+    }
+
+    .cadastrar a{
+        color: #58a6ff;
+        font-size: 12px;
+    }
+    
+    
