@@ -1,10 +1,14 @@
 const searchInput = document.querySelector("#searchInput");
-const API_URL = "http://localhost:8080/acoes/pesquisaAcoes/";
+const API_URL = "https://investtrack-api.onrender.com/acoes/pesquisaAcoes/";
+
+let timeout;
 
 searchInput.addEventListener("keydown", () => {
    
+    clearTimeout(timeout);
     
-    setTimeout(function () {
+    timeout = setTimeout(function () {
+        clearTimeout(timeout);
         const ddlContainer = document.querySelector("#ddlContainer");
         ddlContainer.innerHTML = "";
         let valorPesquisa = searchInput.value;

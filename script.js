@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/acoes/";
+const API_URL = "https://investtrack-api.onrender.com/acoes/";
 const ctx = document.getElementById('stockChart').getContext('2d');
 
 const ticker = window.location.search.replace("?", "");

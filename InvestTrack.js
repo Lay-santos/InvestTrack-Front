@@ -15,9 +15,9 @@ let contentBaixas = document.querySelector(".contentBaixas")
 // chrome.exe --disable-web-security --user-data-dir="C:/temp-chrome"
 
 document.addEventListener("DOMContentLoaded", () => {
-    const ApiAlta = "https://investtrack-j5re.onrender.com/acoes/altas"
-    const ApiBaixa = "https://investtrack-j5re.onrender.com/acoes/baixas"
-    const ApiPopular = "https://investtrack-j5re.onrender.com/acoes/populares"
+    const ApiAlta = "https://investtrack-api.onrender.com/acoes/altas"
+    const ApiBaixa = "https://investtrack-api.onrender.com/acoes/baixas"
+    const ApiPopular = "https://investtrack-api.onrender.com/acoes/populares"
 
     function Alta() {
         fetch(ApiAlta)
