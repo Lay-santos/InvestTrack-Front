@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     divAlta.innerHTML =
                         `
-                        <a href="/pesquisa.html?${element.stock}">
+                        <a href="/pesquisar.html?${element.stock}">
                             <div class="contentStocks">
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     divBaixa.innerHTML =
                        `
-                        <a href="/pesquisa.html?${element.stock}">
+                        <a href="/pesquisar.html?${element.stock}">
                             <div class="contentStocks">
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     divPopulares.innerHTML =
                        `
-                        <a href="/pesquisa.html?${element.stock}">
+                        <a href="/pesquisar.html?${element.stock}">
                             <div class="contentStocks">
 
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
