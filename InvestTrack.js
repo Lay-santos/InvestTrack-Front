@@ -40,11 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                             </div>
                             <p class="${element.change < 0 ? 'abaixoDeZero' : 'acimaDeZero'}">${element.change.toLocaleString('pt-BR')}</p>
+
                             </div>
 
                     </div>
                         </a>
                     `
+
 
                     boardAltas.append(divAlta)
                 });
@@ -71,12 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class='topStockCard'> 
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
+
                             <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                             </div>
                             <p class="${element.change < 0 ? 'abaixoDeZero' : 'acimaDeZero'}">${element.change.toLocaleString('pt-BR')}</p>
                             </div>
 
-                    </div>
+
+                         </div>
                         </a>
                     `
                     boardBaixas.append(divBaixa)
@@ -99,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                        `
                         <a href="/pesquisa.html?${element.stock}">
                             <div class="contentStocks">
+
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
                             <div class='topStockCard'> 
@@ -107,11 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                             </div>
                             <p class="${element.change < 0 ? 'abaixoDeZero' : 'acimaDeZero'}">${element.change.toLocaleString('pt-BR')}</p>
+
                             </div>
 
                     </div>
                         </a>
                     `
+
 
                     boardPopulares.append(divPopulares)
 
