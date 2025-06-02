@@ -15,12 +15,9 @@ let contentBaixas = document.querySelector(".contentBaixas")
 // chrome.exe --disable-web-security --user-data-dir="C:/temp-chrome"
 
 document.addEventListener("DOMContentLoaded", () => {
-    // const ApiAlta = "https://investtrack-j5re.onrender.com/acoes/altas"
-    const ApiAlta = "http://localhost:8080/acoes/altas"
-    // const ApiBaixa = "https://investtrack-j5re.onrender.com/acoes/baixas"
-    const ApiBaixa = "http://localhost:8080/acoes/baixas"
-    // const ApiPopular = "https://investtrack-j5re.onrender.com/acoes/populares"
-    const ApiPopular = "http://localhost:8080/acoes/populares"
+    const ApiAlta = "https://investtrack-api.onrender.com/acoes/altas"
+    const ApiBaixa = "https://investtrack-api.onrender.com/acoes/baixas"
+    const ApiPopular = "https://investtrack-api.onrender.com/acoes/populares"
 
     function Alta() {
         fetch(ApiAlta)
@@ -33,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     divAlta.innerHTML =
                         `
-                    <div class="contentStocks">
+                        <a href="/pesquisa.html?${element.stock}">
+                            <div class="contentStocks">
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
                             <div class='topStockCard'> 
@@ -45,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
 
                     </div>
+                        </a>
                     `
 
                     boardAltas.append(divAlta)
@@ -64,19 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     divBaixa.classList.add("stocks")
 
                     divBaixa.innerHTML =
-                        `
-                    <div class="contentStocks">
+                       `
+                        <a href="/pesquisa.html?${element.stock}">
+                            <div class="contentStocks">
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
                             <div class='topStockCard'> 
                             <p>${element.name}</p>
                             <p>${element.stock}</p>
-                            <p class = "close">${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                            <p>${element.close.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                             </div>
                             <p class="${element.change < 0 ? 'abaixoDeZero' : 'acimaDeZero'}">${element.change.toLocaleString('pt-BR')}</p>
                             </div>
+
                     </div>
-                `
+                        </a>
+                    `
                     boardBaixas.append(divBaixa)
 
                 })
@@ -94,8 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     divPopulares.classList.add("stocks")
 
                     divPopulares.innerHTML =
-                        `
-                    <div class="contentStocks">
+                       `
+                        <a href="/pesquisa.html?${element.stock}">
+                            <div class="contentStocks">
                             <div class='imageContent'><img class ="imagem"  src="${element.logo}" alt=""></div>
                             <div class='textContent'>
                             <div class='topStockCard'> 
@@ -107,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
 
                     </div>
+                        </a>
                     `
 
                     boardPopulares.append(divPopulares)
