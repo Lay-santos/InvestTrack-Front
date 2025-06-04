@@ -326,3 +326,6 @@ backdrop-filter: blur(2.2px);
   flex-direction: column;
   justify-content: space-between;
 }
+#btnFavoritos{
+  cursor: pointer;
+}

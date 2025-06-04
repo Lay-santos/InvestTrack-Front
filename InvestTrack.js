@@ -133,3 +133,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 })
+// ----------------------
+// Lógica de redirecionamento para página de login
+const btnFavoritos = document.querySelector("#btnFavoritos");
+
+btnFavoritos.addEventListener("click", function() {
+    const token = sessionStorage.getItem("tokenInvestTrack");
+
+    if(token == null){
+        window.location.href = "/Login/login.html";
+    }else{
+        window.location.href = "favoritos.html";
+    }
+})
