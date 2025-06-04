@@ -1,12 +1,11 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgba(0, 0, 0, 0.932);
+    background: linear-gradient(180deg, rgba(1, 60, 128, 1) 0%, rgba(1, 21, 44, 1) 50%, rgba(0, 0, 0, 1) 100%);
     color: #c9d1d9;
 }
 
 header {
-    background: linear-gradient(to right, #01152c9d, #00193062);
     padding: 15px 20px;
     display: flex;
     justify-content: center;
@@ -19,7 +18,7 @@ header {
 }
 
 .container-titulo {
-    font-size:xx-small;
+    font-size: xx-small;
 }
 
 .container-titulo a {
@@ -37,13 +36,16 @@ header {
 .stock-card {
     display: flex;
     flex-direction: column;
-    background-color: #161b22;
     padding: 15px;
     border-radius: 12px;
     width: 70%;
     margin-top: 50px;
-    box-shadow: 0 0 15px rgba(9, 62, 122, 0.568);
     margin-bottom: 20px;
+    box-shadow: rgba(37, 69, 175, 0.527) 0px 0px 20px;
+    background: rgba(107, 96, 96, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
 }
 
 .stock-info {
@@ -71,14 +73,17 @@ header {
     margin: 5px 0;
 }
 
-.change.positive, .positive {
+.change.positive,
+.positive {
     color: #00c853;
 }
 
-.change.negative, .negative {
+.change.negative,
+.negative {
     color: #ff1744;
 }
-.attention{
+
+.attention {
     color: rgb(240, 240, 78);
 }
 
@@ -95,59 +100,73 @@ canvas {
 .footer {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(to right, #01152c9d, #00193062);
     font-size: 14px;
-    margin-top: 105px;
+    margin-top: 100px;
 }
 
-#tickerLogo{
+#tickerLogo {
     width: 50px;
     height: 50px;
 }
-#presentationContainer{
+
+#presentationContainer {
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 10px;
 }
-.aboutTicker{
+
+.aboutTicker {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
     gap: 10px;
 }
-#longNameTicker{
+
+#longNameTicker {
     font-size: 20pt;
 }
-.containerDiv{
+
+.containerDiv {
     display: inline-flex;
     justify-content: space-between;
 }
-#returnBtn{
+
+#returnBtn {
     margin-left: 5%;
 }
-#favHeart{
+
+#favHeart {
     cursor: pointer;
     transition: fill 0.25s ease;
 }
-#favHeart:hover{
-        fill: #ffffff;
+
+#favHeart:hover {
+    fill: #ffffff;
 }
-@media (max-width: 600px){
-    .stock-card{
+
+@media (max-width: 600px) {
+    .stock-card {
         width: 90%;
     }
-    .aboutTicker{
+
+    .aboutTicker {
         font-size: 10px;
     }
-    #longNameTicker{
+
+    #longNameTicker {
         font-size: 20px;
     }
-    .infoMoney, .price, .change, .prev-price{
+
+    .infoMoney,
+    .price,
+    .change,
+    .prev-price {
         font-size: 20px;
     }
-    #stockChart{
+
+    #stockChart {
         width: 100%;
     }
 }

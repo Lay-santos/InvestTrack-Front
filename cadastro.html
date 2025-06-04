@@ -7,64 +7,45 @@
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <body id="your-element-selector">
-
-        <div class="login-container">
-            <div class="login-background"></div>
-            <div class="login-box">
-                <div class="titulo">
-                    <h2>Cadastro</h2>
-                </div>
-                <form id="formCadastro">
-                    <h1 class="subtitlee">Digite o seu nome completo</h1>
-                    <div class="input-group">
-                        <input type="text" placeholder="Nome Completo">
-                    </div>
-
-                    <h1 class="subtitlee">Digite um username</h1>
-                    <div class="input-group">
-                        <input id="name" type="text" placeholder="Username">
-                    </div>
-
-                    <h1 class="subtitlee">Digite seu e-mail</h1>
-                    <div class="input-group">
-                        <input id="email" type="text" placeholder="Email">
-                    </div>
-
-                    <h1 class="subtitlee">Digite sua senha</h1>
-                    <div class="input-group">
-                        <input id="password" type="password" placeholder="Senha">
-                    </div>
-
-                    <h1 class="subtitlee">Confirme sua senha</h1>
-                    <div class="input-group">
-                        <input id="passwordConfirm" type="password" placeholder="Confirme sua senha">
-                    </div>
-                <button type="submit">  LOGIN</button>
-
-                <h1 class="cadastrar">Já tem uma conta?<a href="login.html">Fazer login</a></h1>
-    
-                </form>
-            </div>
-        </div>
-        <script src="cadastro.js"></script>
-        <script src="./js/three.r134.min.js"></script>
-        <script src="./js/vanta.net.min.js"></script>
-        <script>
-            VANTA.NET({
-                el: "#your-element-selector",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: "#58a6ff",
-                backgroundColor: "black",
-                points: 11.00,
-                maxDistance: 23.00
-            })
-        </script>
+    <body>
+   
+    <div class="container">
+    <h2 class="h2">Acompanhe o mercado em tempo real. Informação é o seu maior ativo!</h2>
+    <img class="personagem" src="./touro.png" alt="">
+   
+ 
+    <div class="container-login">
+        <H2>Cadastra-se</H2>
+   
+    <div class="quest">
+        <h1>Nome completo</h1>
+        <input type="text" placeholder="Seu nome" required>
+    </div>
+ 
+    <div class="quest">
+        <h1>E-mail</h1>
+        <input type="email" placeholder="seuemail@exemplo.com" required>
+    </div>
+ 
+    <div class="quest">
+        <h1>Username</h1>
+        <input type="text" placeholder="Nome de usuário" required>
+    </div>
+ 
+    <div class="quest">
+        <h1>Senha</h1>
+        <input type="password" placeholder="senha" required>
+    </div>
+ 
+    <div class="quest">
+        <h1>Confirmar Senha</h1>
+        <input type="password" placeholder="Confirmar senha" required>
+    </div>
+ 
+        <button type="submit">Cadastrar</button>
+ 
+        <h1 class="cadastrar">Já tem uma conta?<a href="login.html">Fazer Login</a></h1>
+    </div>
+    </div>
 </body>
 </html>
