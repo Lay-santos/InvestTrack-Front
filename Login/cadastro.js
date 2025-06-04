@@ -1,16 +1,15 @@
-const nameInput = document.getElementById("name")
+const nameInput = document.getElementById("username")
 const emailInput = document.getElementById("email")
 const passwordInput = document.getElementById("password")
 const passwordConfirm = document.getElementById("passwordConfirm")
-const form= document.getElementById("formCadastro")
+const form = document.getElementById("formCadastro")
 
-const cadastroUser = "http://localhost:8080/user/"
+const cadastroUser = "https://investtrack-api.onrender.com/user/"
 
 
 form.addEventListener("submit",async function(event) { 
     event.preventDefault()
-    console.log("qualquer");
-if (nameInput == ""|| emailInput==""||passwordInput=="") {
+if (nameInput.value == ""|| emailInput.value==""||passwordInput.value=="") {
         alert("Todos os campos precisão ser preenchidos")
         return
     } 
@@ -20,12 +19,12 @@ if (nameInput == ""|| emailInput==""||passwordInput=="") {
         return
     }
     const usuario = {
-        name: nameInput.value,
+        username: nameInput.value,
         email: emailInput.value,
         password: passwordInput.value
     }
 
-
+    console.log(usuario);
     const response = await fetch(cadastroUser, {
         method: "POST",
         headers: {
@@ -34,8 +33,10 @@ if (nameInput == ""|| emailInput==""||passwordInput=="") {
         body: JSON.stringify(usuario)
     })
 
+    console.log(response);
+
     if (!response.ok) {
-        alert("Ocorreu um erro ao criar um usuario")
+        alert("Ocorreu um erro ao criar o usuario " + response)
         return
     } else {
         alert("usuario criado com sucesso!")

@@ -1,4 +1,4 @@
-const InputEmail = document.getElementById("email")
+const InputUsername = document.getElementById("username")
 const InputPassword = document.getElementById("password")
 const formLogin = document.getElementById("formLogin")
 
@@ -9,12 +9,14 @@ formLogin.addEventListener("submit", async function (event) {
     event.preventDefault()
 
     const login = {
-        email: InputEmail.value,
+        username: InputUsername.value,
         password: InputPassword.value
     }
 
+    console.log(login)
 
-    if (InputEmail == "" || InputPassword == "") {
+
+    if (InputUsername.value == "" || InputPassword.value == "") {
         alert("Todos os campos precisão ser preenchidos")
         return
     }
@@ -28,16 +30,15 @@ formLogin.addEventListener("submit", async function (event) {
     console.log(res)
 
     if (!res.ok) {
-        alert("Erro ao efetuar o login")
+        alert("Erro ao efetuar o login " + res)
         console.log(Error);
 
     } else {
 
-        const data = await res.text();
-        console.log(data)
-        sessionStorage.setItem("tokenInvestTrack", data)
+        const data = await res.json();
+        sessionStorage.setItem("tokenInvestTrack", data.access_token)
         alert("O login foi realizado com sucesso")
-        window.location.href = "index.html"
+        window.location.href = "/index.html"
 
     }
 
