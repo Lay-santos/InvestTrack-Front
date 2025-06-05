@@ -2,7 +2,7 @@ const InputUsername = document.getElementById("username")
 const InputPassword = document.getElementById("password")
 const formLogin = document.getElementById("formLogin")
 
-const loginUser = "http://localhost:8080/user/login"
+const loginUser = "https://investtrack-api.onrender.com/user/login"
 // token é apenas usado para os favoritos e toda vez que se faz um login é criado um token temporário 
 
 formLogin.addEventListener("submit", async function (event) {
