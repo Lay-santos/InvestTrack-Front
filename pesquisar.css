@@ -142,8 +142,8 @@ canvas {
     transition: fill 0.25s ease;
 }
 #favHeart.favorited {
-  fill: red;
-  stroke: red;
+  fill: white;
+  stroke: white;
 }
 
 
