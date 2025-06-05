@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!secaoFavoritos) return;
 
     try {
-      const resposta = await fetch("http://localhost:8080/favoritos", {
+      const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!ticker) return;
 
     try {
-      const resposta = await fetch("http://localhost:8080/favoritos", {
+      const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const metodo = estaFavoritado ? "DELETE" : "POST";
 
     try {
-      const resposta = await fetch(`http://localhost:8080/favoritos/${ticker}`, {
+      const resposta = await fetch(`https://investtrack-api.onrender.com/favoritos/${ticker}`, {
         method: metodo,
         headers: {
           "Authorization": `Bearer ${token}`,
