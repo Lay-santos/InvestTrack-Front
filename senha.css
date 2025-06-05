@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  background-color: rgba(0, 0, 0, 0.911);
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+}
+ 
+.recuperar-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+ 
+.recuperar-form p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+ 
+.recuperar-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+ 
+.recuperar-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #042b50, #212260);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+ 
+.recuperar-form button:hover {
+  background: linear-gradient(to right, #03182c, #0e3349);
+}
+ 
+.recuperar-form .voltar {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: linear-gradient(to right, #042b50, #212260);
+  text-decoration: none;
+}
+ 
+.recuperar-form .voltar:hover {
+  text-decoration: underline;
+}
+ 

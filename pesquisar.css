@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, rgba(1, 60, 128, 1) 0%, rgba(1, 21, 44, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    color: #c9d1d9;
+}
+
+header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.container-titulo {
+    font-size: xx-small;
+}
+
+.container-titulo a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    flex-direction: column;
+}
+
+.stock-card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 12px;
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: rgba(37, 69, 175, 0.527) 0px 0px 20px;
+    background: rgba(107, 96, 96, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+}
+
+.stock-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: end;
+}
+
+.stock-info h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.change {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.change.positive,
+.positive {
+    color: #00c853;
+}
+
+.change.negative,
+.negative {
+    color: #ff1744;
+}
+
+.attention {
+    color: rgb(240, 240, 78);
+}
+
+.prev-price {
+    font-size: 14px;
+    color: #8b949e;
+}
+
+canvas {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 100px;
+}
+
+#tickerLogo {
+    width: 50px;
+    height: 50px;
+}
+
+#presentationContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.aboutTicker {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#longNameTicker {
+    font-size: 20pt;
+}
+
+.containerDiv {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#returnBtn {
+    margin-left: 5%;
+}
+
+#favHeart {
+    cursor: pointer;
+    transition: fill 0.25s ease;
+}
+
+#favHeart:hover {
+    fill: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .stock-card {
+        width: 90%;
+    }
+
+    .aboutTicker {
+        font-size: 10px;
+    }
+
+    #longNameTicker {
+        font-size: 20px;
+    }
+
+    .infoMoney,
+    .price,
+    .change,
+    .prev-price {
+        font-size: 20px;
+    }
+
+    #stockChart {
+        width: 100%;
+    }
+}
