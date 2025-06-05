@@ -9,13 +9,39 @@ selecionaAcao();
 
 function selecionaAcao() {
   fetch(`${API_URL}${ticker}`)
-    .then(res => res.json())
-    .then((objAcao) => populaTela(objAcao));
+  .then(res => res.json())
+  .then((objAcao) => populaTela(objAcao))
+  .catch((error) => {
+      Swal.fire({
+        title: "Ação não encontrada",
+        text: "Ação não foi encontrada, retornando a tela inicial...",
+        icon: "error",
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        timer: 3500
+      })
+      .then(() => window.location.href = "/index.html")
+        
+      
+    });
 }
 
 function populaTela(objAcao) {
-
   populaInfoEmpresa(objAcao);
+
+  console.log(objAcao.historicalDataPrice);
+
+  if(ticker.endsWith("F") || objAcao.historicalDataPrice.length < 3){
+    Swal.fire({
+        title: "Ação sem gráfico",
+        text: `Essa ação não contém gráfico, por ${ticker.endsWith("F") ? "ser uma fração de ação" : "não ter dados suficientes na base"}`,
+        icon: "info",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+      })
+      return;
+  }
   populaInfoGrafico(objAcao);
 
 }
@@ -30,7 +56,7 @@ function populaInfoEmpresa(objAcao) {
     document.querySelector("#change").classList.remove("positive");
     document.querySelector("#change").classList.add("negative");
   }
-  document.querySelector("#longNameTicker").innerHTML = `${objAcao.longName || objAcao.shortName}`;
+  document.querySelector("#longNameTicker").innerHTML = `${objAcao.longName || objAcao.shortName || ""}`;
   document.querySelector("#marketCapTicker").innerHTML = `<strong>Capitalização de mercado:</strong> ${objAcao.marketCap.toLocaleString()}`;
   document.querySelector("#marketVolumeTicker").innerHTML = `<strong>Volume de mercado:</strong> ${objAcao.regularMarketVolume.toLocaleString()}`;
   document.querySelector("#maxDayPrice").innerHTML = `<strong>Máxima do dia:</strong> <span class="positive">${objAcao.regularMarketDayHigh.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>`
@@ -67,7 +93,7 @@ const stockChart = new Chart(ctx, {
       tension: 0.3,
       pointRadius: 3,
       pointHoverRadius: 5
-      
+
     }]
   },
   options: {
