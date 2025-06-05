@@ -141,6 +141,11 @@ canvas {
     cursor: pointer;
     transition: fill 0.25s ease;
 }
+#favHeart.favorited {
+  fill: white;
+  stroke: white;
+}
+
 
 #favHeart:hover {
     fill: #ffffff;

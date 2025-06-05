@@ -35,10 +35,12 @@ formLogin.addEventListener("submit", async function (event) {
 
     } else {
 
-        const data = await res.json();
-        sessionStorage.setItem("tokenInvestTrack", data.access_token)
-        alert("O login foi realizado com sucesso")
-        window.location.href = "/index.html"
+ const data = await res.json();
+sessionStorage.setItem("tokenInvestTrack", data.access_token);
+sessionStorage.setItem("usernameInvestTrack", InputUsername.value); // salva o username
+alert("O login foi realizado com sucesso");
+window.location.href = "/index.html";
+
 
     }
 
