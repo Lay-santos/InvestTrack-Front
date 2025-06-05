@@ -2,7 +2,7 @@ const InputUsername = document.getElementById("username")
 const InputPassword = document.getElementById("password")
 const formLogin = document.getElementById("formLogin")
 
-const loginUser = "https://investtrack-api.onrender.com/user/login"
+const loginUser = "http://localhost:8080/user/login"
 // token é apenas usado para os favoritos e toda vez que se faz um login é criado um token temporário 
 
 formLogin.addEventListener("submit", async function (event) {
@@ -35,10 +35,12 @@ formLogin.addEventListener("submit", async function (event) {
 
     } else {
 
-        const data = await res.json();
-        sessionStorage.setItem("tokenInvestTrack", data.access_token)
-        alert("O login foi realizado com sucesso")
-        window.location.href = "/index.html"
+ const data = await res.json();
+sessionStorage.setItem("tokenInvestTrack", data.access_token);
+sessionStorage.setItem("usernameInvestTrack", InputUsername.value); // salva o username
+alert("O login foi realizado com sucesso");
+window.location.href = "/index.html";
+
 
     }
 
