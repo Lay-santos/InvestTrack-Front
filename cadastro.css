@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(180deg, rgba(1, 60, 128, 1) 0%, rgba(1, 21, 44, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    font-family: "Roboto", sans-serif;
 }
  
 .container {
@@ -47,7 +48,7 @@ body {
 }
  
 .container-login h2 {
-    
+    color: white;
     border-radius: 5px;
     font-size: 33px;
     font-weight: 700;
@@ -75,9 +76,9 @@ body {
     outline: none;
     padding: 10px;
     width: 86%;
+    color: white;
     border-radius: 6px;
     background-color: rgba(14, 15, 15, 0.158);
-    color: white;
 }
  
 ::placeholder{
@@ -87,7 +88,7 @@ body {
 button {
         width: 90%;
         background-color: #00C389;
-        box-shadow: 0 4px 12px rgba(0, 180, 255, 0.35);
+        box-shadow: 0 4px 12px rgba(0, 180, 255, 0.35); 
         color: white;
         padding: 10px;
         border: none;
@@ -130,7 +131,7 @@ button {
     font-size: 20px;
     max-width: 90%;
     margin-top: 10px;
-   
+    
   }
  
   .personagem {
@@ -150,7 +151,7 @@ button {
   }
  
   .quest input {
-    width: 95%;
+    width: 91%;
   }
  
   button {
