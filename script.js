@@ -126,7 +126,7 @@ function verificaFavorito() {
   const nomeTicker = document.getElementById("tickerName")?.innerText;
   if (!nomeTicker) return;
 
-  fetch("http://localhost:8080/favoritos", {
+  fetch("https://investtrack-api.onrender.com/favoritos", {
     headers: {
       "Authorization": `Bearer ${token}`,
       "Content-Type": "application/json"
