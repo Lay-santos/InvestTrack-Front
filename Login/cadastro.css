@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(180deg, rgba(1, 60, 128, 1) 0%, rgba(1, 21, 44, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    font-family: "Roboto", sans-serif;
 }
  
 .container {
@@ -75,12 +76,15 @@ body {
     outline: none;
     padding: 10px;
     width: 86%;
+    color: white;
     border-radius: 6px;
     background-color: rgba(14, 15, 15, 0.158);
+    font-size: 16px;
 }
  
 ::placeholder{
     color: rgba(255, 255, 255, 0.849);
+    font-size: 16px;
 }
  
 button {
@@ -92,7 +96,6 @@ button {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        font-family: 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 17px;
         margin-top: 30px;
@@ -129,7 +132,6 @@ button {
     font-size: 20px;
     max-width: 90%;
     margin-top: 10px;
-    
   }
  
   .personagem {
@@ -149,7 +151,7 @@ button {
   }
  
   .quest input {
-    width: 95%;
+    width: 91%;
   }
  
   button {
