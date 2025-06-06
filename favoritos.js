@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const btnFavorito = document.querySelector("#btnFavorito");
+const btnFavorito = document.querySelector("#favHeart");
 
 btnFavorito.addEventListener("click", () => {
     if (!token) {
