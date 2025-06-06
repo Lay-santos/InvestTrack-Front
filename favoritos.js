@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
+          method: "GET",
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
         }
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
+          method: "GET",
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
         }
