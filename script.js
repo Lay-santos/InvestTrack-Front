@@ -28,6 +28,7 @@ function selecionaAcao() {
 }
 
 function populaTela(objAcao) {
+  verificaFavorito(objAcao); // Adicionado aqui após carregar a ação
   populaInfoEmpresa(objAcao);
 
   console.log(objAcao.historicalDataPrice);
@@ -43,7 +44,7 @@ function populaTela(objAcao) {
       return;
   }
   populaInfoGrafico(objAcao);
-  verificaFavorito(); // Adicionado aqui após carregar a ação
+  
 }
 
 function populaInfoEmpresa(objAcao) {
@@ -117,16 +118,17 @@ const stockChart = new Chart(ctx, {
 });
 
 // === Verifica se a ação está favoritada ===
-function verificaFavorito() {
+function verificaFavorito(objAcao) {
   const coracaoFavorito = document.getElementById("favHeart");
   const token = sessionStorage.getItem("tokenInvestTrack");
 
   if (!coracaoFavorito || !token) return;
 
-  const nomeTicker = document.getElementById("tickerName")?.innerText;
+  const nomeTicker = objAcao.symbol;
   if (!nomeTicker) return;
 
   fetch("https://investtrack-api.onrender.com/favoritos", {
+    method: "GET",
     headers: {
       "Authorization": `Bearer ${token}`,
       "Content-Type": "application/json"
