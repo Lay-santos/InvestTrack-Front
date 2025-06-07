@@ -76,6 +76,8 @@ body {
     width: 85%;
     border-radius: 6px;
     background-color: rgba(14, 15, 15, 0.158);
+    font-size: 17px;
+    color: #ccc;
 }
 
 ::placeholder {
@@ -157,10 +159,6 @@ button:hover {
 
     .container-login h2 {
         font-size: 32px;
-    }
-
-    .quest input {
-        width: 95%;
     }
 
     button {
