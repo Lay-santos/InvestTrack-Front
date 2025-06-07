@@ -1,45 +1,53 @@
-const InputUsername = document.getElementById("username")
-const InputPassword = document.getElementById("password")
-const formLogin = document.getElementById("formLogin")
 
-const loginUser = "https://investtrack-api.onrender.com/user/login"
-// token é apenas usado para os favoritos e toda vez que se faz um login é criado um token temporário 
+const InputUsername = document.getElementById("username");
+const InputPassword = document.getElementById("password");
+const formLogin = document.getElementById("formLogin");
+
+const loginUser = "https://investtrack-api.onrender.com/user/login";
+// token é apenas usado para os favoritos e toda vez que se faz um login é criado um token temporário
 
 formLogin.addEventListener("submit", async function (event) {
-    event.preventDefault()
+  event.preventDefault();
 
-    const login = {
-        username: InputUsername.value,
-        password: InputPassword.value
-    }
+  const login = {
+    username: InputUsername.value,
+    password: InputPassword.value,
+  };
 
-    console.log(login)
+  console.log(login);
 
+  if (InputUsername.value == "" || InputPassword.value == "") {
+    Swal.fire({
+      icon: "warning",
+      title: "Campos obrigatórios",
+      text: "Todos os campos precisam ser preenchidos!",
+    });
+  }
 
-    if (InputUsername.value == "" || InputPassword.value == "") {
-        alert("Todos os campos precisão ser preenchidos")
-        return
-    }
+  const res = await fetch(loginUser, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(login),
+  });
 
-    const res = await fetch(loginUser, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(login)
-    })
+  console.log(res);
 
-    console.log(res)
-
-    if (!res.ok) {
-        alert("Erro ao efetuar o login " + res)
-        console.log(Error);
-
-    } else {
-
-        const data = await res.json();
-        sessionStorage.setItem("tokenInvestTrack", data.access_token)
-        alert("O login foi realizado com sucesso")
-        window.location.href = "/index.html"
-
-    }
-
-})
+  if (!res.ok) {
+    Swal.fire({
+      icon: "error",
+      title: "Erro ao efetuar o login",
+      text: "Verifique seus dados e tente novamente.",
+    });
+    console.log(Error);
+  } else {
+    Swal.fire({
+      icon: "success",
+      title: "Login realizado",
+      text: "Você será redirecionado em instantes.",
+      timer: 2000,
+      showConfirmButton: false,
+    }).then(() => {
+      window.location.href = "/index.html";
+    });
+  }
+});
