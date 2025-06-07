@@ -3,12 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const secaoFavoritos = document.querySelector(".favoritos");
   const token = sessionStorage.getItem("tokenInvestTrack");
 
-  if (!token) {
-    alert("Você precisa estar logado para ver os favoritos.");
-    window.location.href = "Login/login.html";
-    return;
-  }
-
   // Mostrar nome do usuário na tela (se existir)
   const nomeUsuario = sessionStorage.getItem("usernameInvestTrack");
   const secaoUsuario = document.querySelector(".user h2");
@@ -23,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
+          method: "GET",
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
         }
@@ -73,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const resposta = await fetch("https://investtrack-api.onrender.com/favoritos", {
         headers: {
+          method: "GET",
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
         }
@@ -144,5 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (coracaoFavorito) {
     coracaoFavorito.addEventListener("click", alternarFavorito);
+  }
+});
+
+const btnFavorito = document.querySelector("#favHeart");
+
+btnFavorito.addEventListener("click", () => {
+    if (!token) {
+    alert("Você precisa estar logado para ver os favoritos.");
+    window.location.href = "Login/login.html";
+    return;
   }
 });

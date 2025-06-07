@@ -47,7 +47,7 @@ body {
 }
  
 .container-login h2 {
-    color: white;
+    
     border-radius: 5px;
     font-size: 33px;
     font-weight: 700;
@@ -77,6 +77,7 @@ body {
     width: 86%;
     border-radius: 6px;
     background-color: rgba(14, 15, 15, 0.158);
+    color: white;
 }
  
 ::placeholder{
@@ -86,7 +87,7 @@ body {
 button {
         width: 90%;
         background-color: #00C389;
-        box-shadow: 0 4px 12px rgba(0, 180, 255, 0.35); 
+        box-shadow: 0 4px 12px rgba(0, 180, 255, 0.35);
         color: white;
         padding: 10px;
         border: none;
@@ -129,7 +130,7 @@ button {
     font-size: 20px;
     max-width: 90%;
     margin-top: 10px;
-    
+   
   }
  
   .personagem {
