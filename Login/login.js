@@ -1,4 +1,3 @@
-
 const InputUsername = document.getElementById("username");
 const InputPassword = document.getElementById("password");
 const formLogin = document.getElementById("formLogin");
@@ -22,6 +21,7 @@ formLogin.addEventListener("submit", async function (event) {
       title: "Campos obrigatórios",
       text: "Todos os campos precisam ser preenchidos!",
     });
+    return;  // Evita enviar login vazio
   }
 
   const res = await fetch(loginUser, {
@@ -40,6 +40,11 @@ formLogin.addEventListener("submit", async function (event) {
     });
     console.log(Error);
   } else {
+    
+      const data = await res.json();
+      console.log(data); 
+      sessionStorage.setItem("tokenInvestTrack", data.access_token); 
+
     Swal.fire({
       icon: "success",
       title: "Login realizado",
