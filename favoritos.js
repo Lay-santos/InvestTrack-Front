@@ -121,8 +121,14 @@ async function verificarFavorito() {
 
 async function alternarFavorito() {
   if (!carregarCredenciais()) {
-    alert("Você precisa estar logado para favoritar ações.");
-    window.location.href = "Login/login.html";
+    Swal.fire({
+      title: "Ação não favoritada",
+      text: "Você precisa estar logado para favoritar ações.",
+      icon: "warning",
+      confirmButtonText: "Fazer login"
+    }).then(() => {
+      window.location.href = "Login/login.html";
+    });
     return;
   }
 
@@ -131,7 +137,11 @@ async function alternarFavorito() {
 
   const ticker = obterTickerAtual();
   if (!ticker) {
-    alert("Ticker não identificado");
+    Swal.fire({
+      title: "Ticker não identificado",
+      text: "Não foi possível identificar a ação.",
+      icon: "error"
+    });
     return;
   }
 
@@ -149,20 +159,40 @@ async function alternarFavorito() {
 
     if (resposta.ok) {
       coracaoFavorito.classList.toggle("favorited", !estaFavoritado);
-      const mensagem = estaFavoritado ? 
-        "Ação removida dos favoritos!" : 
-        "Ação adicionada aos favoritos!";
-      alert(mensagem);
-      
-      if (estaFavoritado && window.location.pathname.includes("pesquisar.html")) {
-        setTimeout(() => window.location.href = "favoritos.html", 800);
+
+      if (!estaFavoritado) {
+        Swal.fire({
+          title: "Favoritado!",
+          text: `A ação ${ticker} foi adicionada aos seus favoritos.`,
+          icon: "success",
+          confirmButtonText: "OK"
+        });
+      } else {
+        Swal.fire({
+          title: "Removido!",
+          text: `A ação ${ticker} foi removida dos seus favoritos.`,
+          icon: "info",
+          confirmButtonText: "OK"
+        }).then(() => {
+          if (window.location.pathname.includes("pesquisar.html")) {
+            window.location.href = "favoritos.html";
+          }
+        });
       }
+    } else {
+      throw new Error("Erro na requisição");
     }
   } catch (erro) {
     console.error("Erro ao atualizar favoritos:", erro);
-    alert("Erro ao atualizar favoritos.");
+    Swal.fire({
+      title: "Erro ao atualizar favoritos",
+      text: "Tente novamente mais tarde.",
+      icon: "error"
+    });
   }
 }
+
+
 
 function obterTickerAtual() {
   const url = window.location.href;
