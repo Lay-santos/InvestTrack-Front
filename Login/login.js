@@ -44,6 +44,7 @@ formLogin.addEventListener("submit", async function (event) {
       const data = await res.json();
       console.log(data); 
       sessionStorage.setItem("tokenInvestTrack", data.access_token); 
+      sessionStorage.setItem("usernameInvestTrack", InputUsername.value);
 
     Swal.fire({
       icon: "success",
