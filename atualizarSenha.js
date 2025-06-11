@@ -39,7 +39,8 @@ btnAtualizar.addEventListener("click", (event) => {
             icon: "success",
             title: "Senha alterada com sucesso",
             text: "Sua senha foi alterada com sucesso",
-            });
+            timer: 4000
+            }).then(() => window.location.href = "/Login/login.html")
         }
     })
     .catch(error => {
@@ -47,6 +48,6 @@ btnAtualizar.addEventListener("click", (event) => {
             icon: "error",
             title: "Ocorreu um erro",
             text: "Ocorreu um erro:" + error,
-            });
+            }).then(() => window.location.href = "/Login/login.html");
     })
 });
