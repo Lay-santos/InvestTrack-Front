@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    ;
-  </head>
 
-  <body>
-    <form id="formLogin">
-      <div class="container">
-        <h2 class="h2">
-          Acompanhe o mercado em tempo real. Informação é o seu maior ativo!
-        </h2>
-        <img class="personagem" src="./touro.png" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  ;
+</head>
 
-        <div class="container-login">
-          <h2>Login</h2>
+<body>
+  <form id="formLogin">
+    <div class="container">
+      <h2 class="h2">
+        Acompanhe o mercado em tempo real. Informação é o seu maior ativo!
+      </h2>
+      <img class="personagem" src="./touro.png" alt="" />
 
-          <div class="quest">
-            <h1>Usuario</h1>
-            <input maxlength="30" id="username" type="text" placeholder="Usuário" required />
-          </div>
+      <div class="container-login">
+        <h2>Login</h2>
 
-          <div class="quest">
-            <h1>Senha</h1>
-            <input maxlength="30" id="password" type="password" placeholder="Senha" required />
-          </div>
-          <button type="submit">LOGIN</button>
+        <div class="quest">
+          <h1>Usuario</h1>
+          <input maxlength="30" id="username" type="text" placeholder="Usuário" required />
+        </div>
 
-          <div class="quest-final">
+        <div class="quest">
+          <h1>Senha</h1>
+          <input maxlength="30" id="password" type="password" placeholder="Senha" required />
+        </div>
+        <button type="submit">LOGIN</button>
+
+        <div class="quest-final">
+          <a href="../senha.html">
             <p href="">Esqueceu a senha?</p>
-            <p>Não tem uma conta?<a href="cadastro.html">Cadastra-se</a></p>
-          </div>
+          </a>
+          <p>Não tem uma conta?<a href="cadastro.html">Cadastra-se</a></p>
         </div>
       </div>
-    </form>
-    <script src="login.js"></script>
-  </body>
+    </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="login.js"></script>
+</body>
+
 </html>
