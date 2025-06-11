@@ -3,7 +3,8 @@ const API_URL = "https://investtrack-api.onrender.com/api/password/reset";
 
 
 
-btnAtualizar.addEventListener("click", () => {
+btnAtualizar.addEventListener("click", (event) => {
+    event.preventDefault();
     const token = window.location.search.replace("?", "").split("=")[1];
     let senha = document.querySelector("#senha1").value;
     let senha2 = document.querySelector("#senha2").value;
