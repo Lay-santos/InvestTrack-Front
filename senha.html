@@ -11,10 +11,12 @@
     <form class="recuperar-form">
       <h2>Recuperar Senha</h2>
       <p>Digite seu e-mail para redefinir sua senha</p>
-      <input type="email" placeholder="Seu e-mail" required>
-      <button type="submit">Enviar link de recuperação</button>
-      <a href="login.html" class="voltar">Voltar ao login</a>
+      <input id="emailInput" type="email" placeholder="Seu e-mail" required>
+      <button id="enviarEmailBtn" type="submit">Enviar link de recuperação</button>
+      <a href="/Login/login.html" class="voltar">Voltar ao login</a>
     </form>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="esqueceuSenha.js"></script>
 </body>
 </html>
