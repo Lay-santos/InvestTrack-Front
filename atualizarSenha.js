@@ -9,7 +9,7 @@ btnAtualizar.addEventListener("click", (event) => {
     let senha = document.querySelector("#senha1").value;
     let senha2 = document.querySelector("#senha2").value;
 
-    if (senha1 !== senha2) {
+    if (senha !== senha2) {
         Swal.fire({
             icon: "error",
             title: "Senhas não coincidem",
