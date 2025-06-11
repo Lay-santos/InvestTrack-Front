@@ -33,7 +33,6 @@ btnAtualizar.addEventListener("click", (event) => {
             "Content-Type": "application/json"},
         body: JSON.stringify({token: token, newPassword: senha})
     })
-    .then((res) => res.json())
     .then(data => {
         if(data.ok){
             Swal.fire({
