@@ -31,7 +31,7 @@ formLogin.addEventListener("submit", async function (event) {
     if (!res.ok) {
       Swal.fire({
         icon: "error",
-        title: "Erro ao efetuar o login",
+        title: "Não foi possível realizar o login",
         text: "Verifique seus dados e tente novamente.",
       });
       return;
@@ -61,12 +61,12 @@ formLogin.addEventListener("submit", async function (event) {
       }
     });
 
-  } catch (error) {
-    console.error("Erro ao fazer login:", error);
+  }catch (error) {
+    console.error("Erro ao tentar efetuar login:", error);
     Swal.fire({
       icon: "error",
-      title: "Erro inesperado",
-      text: "Ocorreu um erro. Tente novamente mais tarde.",
+      title: "Algo deu errado",
+      text: "Não foi possível concluir o login. Por favor, tente novamente em instantes.",
     });
-  }
+  }  
 });
