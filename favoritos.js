@@ -190,8 +190,7 @@ async function alternarFavorito() {
   } catch (erro) {
     console.error("Erro ao atualizar favoritos:", erro);
     Swal.fire({
-      title: "Erro ao atualizar favoritos",
-      text: "Tente novamente mais tarde.",
+      title: "Esta ação já esta Favoritada.",
       icon: "error"
     });
   }
