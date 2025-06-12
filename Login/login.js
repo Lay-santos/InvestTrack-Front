@@ -3,7 +3,6 @@ const InputPassword = document.getElementById("password");
 const formLogin = document.getElementById("formLogin");
 
 const loginUser = "https://investtrack-api.onrender.com/user/login";
-// token é apenas usado para os favoritos e toda vez que se faz um login é criado um token temporário
 
 formLogin.addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -13,38 +12,35 @@ formLogin.addEventListener("submit", async function (event) {
     password: InputPassword.value,
   };
 
-  console.log(login);
-
-  if (InputUsername.value == "" || InputPassword.value == "") {
+  if (InputUsername.value === "" || InputPassword.value === "") {
     Swal.fire({
       icon: "warning",
       title: "Campos obrigatórios",
       text: "Todos os campos precisam ser preenchidos!",
     });
-    return;  // Evita enviar login vazio
+    return;
   }
 
-  const res = await fetch(loginUser, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(login),
-  });
-
-  console.log(res);
-
-  if (!res.ok) {
-    Swal.fire({
-      icon: "error",
-      title: "Erro ao efetuar o login",
-      text: "Verifique seus dados e tente novamente.",
+  try {
+    const res = await fetch(loginUser, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(login),
     });
-    console.log(Error);
-  } else {
-    
-      const data = await res.json();
-      console.log(data); 
-      sessionStorage.setItem("tokenInvestTrack", data.access_token); 
-      sessionStorage.setItem("usernameInvestTrack", InputUsername.value);
+
+    if (!res.ok) {
+      Swal.fire({
+        icon: "error",
+        title: "Erro ao efetuar o login",
+        text: "Verifique seus dados e tente novamente.",
+      });
+      return;
+    }
+
+    const data = await res.json();
+
+    sessionStorage.setItem("tokenInvestTrack", data.access_token);
+    sessionStorage.setItem("usernameInvestTrack", InputUsername.value);
 
     Swal.fire({
       icon: "success",
@@ -53,7 +49,24 @@ formLogin.addEventListener("submit", async function (event) {
       timer: 2000,
       showConfirmButton: false,
     }).then(() => {
-      window.location.href = "/index.html";
+      const tickerParaFavoritar = sessionStorage.getItem("acaoParaFavoritar");
+
+      if (tickerParaFavoritar) {
+        sessionStorage.setItem("favoritarAposLogin", "true");
+        sessionStorage.removeItem("acaoParaFavoritar");
+
+        window.location.href = `/pesquisar.html?${tickerParaFavoritar}`;
+      } else {
+        window.location.href = "/index.html";
+      }
+    });
+
+  } catch (error) {
+    console.error("Erro ao fazer login:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Erro inesperado",
+      text: "Ocorreu um erro. Tente novamente mais tarde.",
     });
   }
 });

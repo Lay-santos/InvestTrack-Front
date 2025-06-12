@@ -93,10 +93,11 @@ function criarCardAcao(acao) {
 
 async function verificarFavorito() {
   const coracaoFavorito = document.getElementById("favHeart");
-  if (!coracaoFavorito || !carregarCredenciais()) {
-    if (coracaoFavorito) coracaoFavorito.style.display = "none";
-    return;
-  }
+  if (!coracaoFavorito) return;
+
+  coracaoFavorito.style.display = "block"; // Mostra o coração mesmo sem login
+
+  if (!carregarCredenciais()) return; // Só tenta buscar se estiver logado
 
   const ticker = obterTickerAtual();
   if (!ticker) return;
@@ -112,15 +113,18 @@ async function verificarFavorito() {
     if (resposta.ok) {
       const favoritos = await resposta.json();
       coracaoFavorito.classList.toggle("favorited", favoritos.includes(ticker));
-      coracaoFavorito.style.display = "block";
     }
   } catch (erro) {
     console.error("Erro ao verificar favorito:", erro);
   }
 }
 
+
 async function alternarFavorito() {
   if (!carregarCredenciais()) {
+    const ticker = obterTickerAtual(); // pegar o ticker atual
+    if (ticker) sessionStorage.setItem("acaoParaFavoritar", ticker); // salvar
+  
     Swal.fire({
       title: "Ação não favoritada",
       text: "Você precisa estar logado para favoritar ações.",
@@ -131,6 +135,7 @@ async function alternarFavorito() {
     });
     return;
   }
+  
 
   const coracaoFavorito = document.getElementById("favHeart");
   if (!coracaoFavorito) return;
@@ -210,9 +215,19 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarNomeUsuario();
     carregarFavoritos();
   }
-  
+
   if (document.getElementById("favHeart")) {
     verificarFavorito();
     document.getElementById("favHeart").addEventListener("click", alternarFavorito);
+  }
+
+  // Botão Sair
+  const btnLogout = document.getElementById("btnLogout");
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      sessionStorage.removeItem("tokenInvestTrack");
+      sessionStorage.removeItem("usernameInvestTrack");
+      window.location.href = "index.html";
+    });
   }
 });

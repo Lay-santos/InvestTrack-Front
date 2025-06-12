@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(180deg, rgba(1, 60, 128, 1) 0%, rgba(1, 21, 44, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  color: #c9d1d9;
+  background: linear-gradient(180deg, #013C80 0%, #01152C 50%, #000000 100%);
+  color: #E6EDF3;
 }
 
 h1 {
@@ -30,12 +30,12 @@ header h1 {
 }
 
 header input {
-  background-color: #21262d;
+  background-color: #1C1C1C;
   border: none;
   padding: 10px;
   width: 300px;
   border-radius: 8px;
-  color: #c9d1d9;
+  color: #E6EDF3;
 }
 
 .box-search {
@@ -45,78 +45,26 @@ header input {
   border-width: 1px;
 }
 
-.campo-search {
-  width: 68%;
-  height: 35px;
-  padding: 3px 5px;
-  border: 1px solid #d2d2d2;
-  font-size: 16px;
-  background: #f1f1f1;
-  -moz-border-radius: 12px 0px 0px 12px;
-  border-radius: 12px 0px 0px 12px;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
-}
-
 .btn-search {
-  background-color: #052d57;
-  -moz-border-radius: 0px 12px 12px 0px;
-  border-radius: 0px 12px 12px 0px;
+  background-color: #1F6FEB;
+  border-radius: 0 12px 12px 0;
   border: none;
   width: 25%;
   height: 43px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .btn-search:hover {
-  background: #202020;
+  background-color: #2D2D2D;
 }
 
 .btn-search:active {
-  background: #007cff;
+  background: #007CFF;
   outline: none;
-}
-
-.btn-search::-moz-focus-inner {
-  border: none;
-}
-
-.campo-search::-webkit-input-placeholder {
-  color: #9c9c9c;
-  font-style: italic;
-}
-
-.campo-search:-moz-placeholder {
-  color: #9c9c9c;
-  font-style: italic;
-}
-
-.campo-search.placeholder {
-  color: #9c9c9c !important;
-  font-style: italic;
-}
-
-.campo-search:focus {
-  border-color: #dfdfdf;
-  background: #fff;
-  outline: none;
-}
-
-@media (min-width:48em) {
-  .box-search {
-    width: 380px;
-  }
-}
-
-.icons {
-  display: flex;
-  gap: 10px;
-  font-size: 28px;
-  cursor: pointer;
 }
 
 .input-wrapper {
@@ -137,7 +85,7 @@ main {
 .user h3 {
   font-size: 22px;
   margin-top: 10px;
-  color: #58a6ff;
+  color: #58A6FF;
 }
 
 .favoritos {
@@ -150,25 +98,23 @@ main {
 
 .cards {
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
   width: 250px;
   transition: 0.3s;
   cursor: pointer;
-  box-shadow: rgba(37, 69, 175, 0.596) 0px 0px 20px;
-  background: rgba(87, 83, 83, 0.08);
-  border-radius: 16px;
-  backdrop-filter: blur(2.2px);
-  -webkit-backdrop-filter: blur(2.2px);
+  box-shadow: rgba(37, 69, 175, 0.6) 0px 0px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
 }
 
 .cards:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
 }
 
 .cards h4 {
   font-size: 22px;
-  color: #58a6ff;
+  color: #58A6FF;
   margin-bottom: 10px;
 }
 
@@ -177,6 +123,7 @@ footer {
   padding: 20px;
   font-size: 14px;
   text-align: center;
+  color: #999;
 }
 
 .container-titulo {
@@ -190,6 +137,13 @@ footer {
 
 .house {
   color: white;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 #ddlContainer {
@@ -213,11 +167,10 @@ footer {
   text-align: center;
   background-color: #ffffff;
   cursor: pointer;
+}
 
-  &:hover {
-    background-color: #f3f3f8;
-
-  }
+.ddlItem:hover {
+  background-color: #f3f3f8;
 }
 
 .searchContainer {
@@ -227,6 +180,29 @@ footer {
 
 #returnBtn {
   margin-left: 5%;
+}
+
+.logout-container {
+  margin-left: 1rem;
+}
+
+#btnLogout {
+  background-color: transparent;
+  border: 1px solid #58A6FF;
+  color: #58A6FF;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: white;
+}
+
+
+#btnLogout:hover {
+  background-color: #FF6A6A;
+  color: white;
+  border-color: #FF6A6A;
 }
 
 @media (max-width:600px) {

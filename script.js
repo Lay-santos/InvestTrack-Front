@@ -1,3 +1,16 @@
+function esperarElementoEExecutar(seletor, callback, tentativas = 20, intervalo = 300) {
+  const intervaloID = setInterval(() => {
+    const elemento = document.querySelector(seletor);
+    if (elemento) {
+      clearInterval(intervaloID);
+      callback(elemento);
+    } else if (--tentativas <= 0) {
+      clearInterval(intervaloID);
+      console.warn(`Elemento "${seletor}" não encontrado após várias tentativas.`);
+    }
+  }, intervalo);
+}
+
 const API_URL = "https://investtrack-api.onrender.com/acoes/";
 const ctx = document.getElementById('stockChart').getContext('2d');
 
@@ -32,18 +45,29 @@ function populaTela(objAcao) {
 
   console.log(objAcao.historicalDataPrice);
 
-  if(ticker.endsWith("F") || objAcao.historicalDataPrice.length < 3){
+  if (ticker.endsWith("F") || objAcao.historicalDataPrice.length < 3) {
     Swal.fire({
-        title: "Ação sem gráfico",
-        text: `Essa ação não contém gráfico, por ${ticker.endsWith("F") ? "ser uma fração de ação" : "não ter dados suficientes na base"}`,
-        icon: "info",
-        allowOutsideClick: true,
-        allowEscapeKey: true,
-      })
-      return;
+      title: "Ação sem gráfico",
+      text: `Essa ação não contém gráfico, por ${ticker.endsWith("F") ? "ser uma fração de ação" : "não ter dados suficientes na base"}`,
+      icon: "info",
+      allowOutsideClick: true,
+      allowEscapeKey: true,
+    });
+    return;
   }
+  
   populaInfoGrafico(objAcao);
-  verificaFavorito(); // Adicionado aqui após carregar a ação
+  verificaFavorito();
+
+  if (sessionStorage.getItem("favoritarAposLogin") === "true") {
+    esperarElementoEExecutar("#favHeart", (elemento) => {
+      if (!elemento.classList.contains("favorited")) {
+        const eventoClick = new MouseEvent('click', { bubbles: true, cancelable: true });
+        elemento.dispatchEvent(eventoClick);
+      }
+      sessionStorage.removeItem("favoritarAposLogin");
+    });
+  }
 }
 
 function populaInfoEmpresa(objAcao) {
